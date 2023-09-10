@@ -10,7 +10,8 @@ app.use('/',testimonialRoutes);
 app.use((req,res)=>{
     res.json({message:"invalid url"});
 })
-const server=app.listen(1234,(err)=>{
+const port=process.env.PORT||1234;
+const server=app.listen(port,(err)=>{
     if(err){
         console.log("server crashed ",err);
     }
